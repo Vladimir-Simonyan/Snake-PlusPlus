@@ -19,7 +19,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     fon = new QWidget(this);
     fon->setGeometry(0,0,600,600);
-    fon->setStyleSheet("background-image: url(C:/Users/user/Desktop/Pxik/Zmeyka++/Figures/bg.png);");
+    fon->setStyleSheet("background-image: url("Figures/bg.png);");
 
     for (int i = 0; i < N; i++){
         for (int j = 0; j < M; j++){
@@ -92,54 +92,54 @@ void MainWindow::Update() {
     if(ended) {
         ended = false;
         tmr->setInterval(250);
-        fon->setStyleSheet("background-image: url(C:/Users/user/Desktop/Pxik/Zmeyka++/Figures/go.png);");
+        fon->setStyleSheet("background-image: url("Figures/go.png);");
     }
     else {
-        fon->setStyleSheet("background-image: url(C:/Users/user/Desktop/Pxik/Zmeyka++/Figures/bg1.png);");
+        fon->setStyleSheet("background-image: url("Figures/bg1.png);");
         for (int i = 0; i < N; i++){
             for (int j = 0; j < M; j++){
               elem[i][j]->setStyleSheet("background-color:#00000000;");
             }
         }
-        elem[apple[0]][apple[1]]->setStyleSheet("background-image: url(C:/Users/user/Desktop/Pxik/Zmeyka++/Figures/apple.png);");
+        elem[apple[0]][apple[1]]->setStyleSheet("background-image: url(Figures/apple.png);");
         for(int i = 0; i < snake_len; i++) {
             if (i == 0) {
                 if (!(snake[0][0] == apple[0] && snake[0][1] == apple[1])) {
-                    if (snake[0][2] == 0) elem[snake[i][0]][snake[i][1]]->setStyleSheet("background-image: url(C:/Users/user/Desktop/Pxik/Zmeyka++/Figures/00.png);");
-                    else if (snake[0][2] == 1) elem[snake[i][0]][snake[i][1]]->setStyleSheet("background-image: url(C:/Users/user/Desktop/Pxik/Zmeyka++/Figures/01.png);");
-                    else if (snake[0][2] == 2) elem[snake[i][0]][snake[i][1]]->setStyleSheet("background-image: url(C:/Users/user/Desktop/Pxik/Zmeyka++/Figures/02.png);");
-                    else if (snake[0][2] == 3) elem[snake[i][0]][snake[i][1]]->setStyleSheet("background-image: url(C:/Users/user/Desktop/Pxik/Zmeyka++/Figures/03.png);");
+                    if (snake[0][2] == 0) elem[snake[i][0]][snake[i][1]]->setStyleSheet("background-image: url(Figures/00.png);");
+                    else if (snake[0][2] == 1) elem[snake[i][0]][snake[i][1]]->setStyleSheet("background-image: url(Figures/01.png);");
+                    else if (snake[0][2] == 2) elem[snake[i][0]][snake[i][1]]->setStyleSheet("background-image: url(Figures/02.png);");
+                    else if (snake[0][2] == 3) elem[snake[i][0]][snake[i][1]]->setStyleSheet("background-image: url(Figures/03.png);");
                }
                 else {
-                    if (snake[0][2] == 0) elem[snake[i][0]][snake[i][1]]->setStyleSheet("background-image: url(C:/Users/user/Desktop/Pxik/Zmeyka++/Figures/u0.png);");
-                    else if (snake[0][2] == 1) elem[snake[i][0]][snake[i][1]]->setStyleSheet("background-image: url(C:/Users/user/Desktop/Pxik/Zmeyka++/Figures/u1.png);");
-                    else if (snake[0][2] == 2) elem[snake[i][0]][snake[i][1]]->setStyleSheet("background-image: url(C:/Users/user/Desktop/Pxik/Zmeyka++/Figures/u2.png);");
-                    else if (snake[0][2] == 3) elem[snake[i][0]][snake[i][1]]->setStyleSheet("background-image: url(C:/Users/user/Desktop/Pxik/Zmeyka++/Figures/u3.png);");
+                    if (snake[0][2] == 0) elem[snake[i][0]][snake[i][1]]->setStyleSheet("background-image: url(Figures/u0.png);");
+                    else if (snake[0][2] == 1) elem[snake[i][0]][snake[i][1]]->setStyleSheet("background-image: url(Figures/u1.png);");
+                    else if (snake[0][2] == 2) elem[snake[i][0]][snake[i][1]]->setStyleSheet("background-image: url(Figures/u2.png);");
+                    else if (snake[0][2] == 3) elem[snake[i][0]][snake[i][1]]->setStyleSheet("background-image: url(Figures/u3.png);");
                 }
 
             }
             else if(i+1 <= snake_len-1) {
 
                 if (snake[i][2] == snake[i+1][2]) {
-                    if (snake[i][2] == 0 || snake[i][2] == 2) elem[snake[i][0]][snake[i][1]]->setStyleSheet("background-image: url(C:/Users/user/Desktop/Pxik/Zmeyka++/Figures/20.png);");
-                    else if (snake[i][2] == 1 || snake[i][2] == 3) elem[snake[i][0]][snake[i][1]]->setStyleSheet("background-image: url(C:/Users/user/Desktop/Pxik/Zmeyka++/Figures/13.png);");
+                    if (snake[i][2] == 0 || snake[i][2] == 2) elem[snake[i][0]][snake[i][1]]->setStyleSheet("background-image: url(Figures/20.png);");
+                    else if (snake[i][2] == 1 || snake[i][2] == 3) elem[snake[i][0]][snake[i][1]]->setStyleSheet("background-image: url(Figures/13.png);");
                 }
                 else if (snake[i][2] != snake[i+1][2]) {
-                    if (snake[i][2] == 0 && snake[i+1][2] == 1) elem[snake[i][0]][snake[i][1]]->setStyleSheet("background-image: url(C:/Users/user/Desktop/Pxik/Zmeyka++/Figures/1--0.png);");
-                    else if (snake[i][2] == 0 && snake[i+1][2] == 3) elem[snake[i][0]][snake[i][1]]->setStyleSheet("background-image: url(C:/Users/user/Desktop/Pxik/Zmeyka++/Figures/3--0.png);");
-                    else if (snake[i][2] == 1 && snake[i+1][2] == 2) elem[snake[i][0]][snake[i][1]]->setStyleSheet("background-image: url(C:/Users/user/Desktop/Pxik/Zmeyka++/Figures/2--1.png);");
-                    else if (snake[i][2] == 1 && snake[i+1][2] == 0) elem[snake[i][0]][snake[i][1]]->setStyleSheet("background-image: url(C:/Users/user/Desktop/Pxik/Zmeyka++/Figures/0--1.png);");
-                    else if (snake[i][2] == 2 && snake[i+1][2] == 1) elem[snake[i][0]][snake[i][1]]->setStyleSheet("background-image: url(C:/Users/user/Desktop/Pxik/Zmeyka++/Figures/1--2.png);");
-                    else if (snake[i][2] == 2 && snake[i+1][2] == 3) elem[snake[i][0]][snake[i][1]]->setStyleSheet("background-image: url(C:/Users/user/Desktop/Pxik/Zmeyka++/Figures/3--2.png);");
-                    else if (snake[i][2] == 3 && snake[i+1][2] == 0) elem[snake[i][0]][snake[i][1]]->setStyleSheet("background-image: url(C:/Users/user/Desktop/Pxik/Zmeyka++/Figures/0--3.png);");
-                    else if (snake[i][2] == 3 && snake[i+1][2] == 2) elem[snake[i][0]][snake[i][1]]->setStyleSheet("background-image: url(C:/Users/user/Desktop/Pxik/Zmeyka++/Figures/2--3.png);");
+                    if (snake[i][2] == 0 && snake[i+1][2] == 1) elem[snake[i][0]][snake[i][1]]->setStyleSheet("background-image: url(Figures/1--0.png);");
+                    else if (snake[i][2] == 0 && snake[i+1][2] == 3) elem[snake[i][0]][snake[i][1]]->setStyleSheet("background-image: url(Figures/3--0.png);");
+                    else if (snake[i][2] == 1 && snake[i+1][2] == 2) elem[snake[i][0]][snake[i][1]]->setStyleSheet("background-image: url(Figures/2--1.png);");
+                    else if (snake[i][2] == 1 && snake[i+1][2] == 0) elem[snake[i][0]][snake[i][1]]->setStyleSheet("background-image: url(Figures/0--1.png);");
+                    else if (snake[i][2] == 2 && snake[i+1][2] == 1) elem[snake[i][0]][snake[i][1]]->setStyleSheet("background-image: url(Figures/1--2.png);");
+                    else if (snake[i][2] == 2 && snake[i+1][2] == 3) elem[snake[i][0]][snake[i][1]]->setStyleSheet("background-image: url(Figures/3--2.png);");
+                    else if (snake[i][2] == 3 && snake[i+1][2] == 0) elem[snake[i][0]][snake[i][1]]->setStyleSheet("background-image: url(Figures/0--3.png);");
+                    else if (snake[i][2] == 3 && snake[i+1][2] == 2) elem[snake[i][0]][snake[i][1]]->setStyleSheet("background-image: url(Figures/2--3.png);");
                 }
             }
              if(i == snake_len-1) {
-                if (snake[i][2] == 0) elem[snake[i][0]][snake[i][1]]->setStyleSheet("background-image: url(C:/Users/user/Desktop/Pxik/Zmeyka++/Figures/p0.png);");
-                else if (snake[i][2] == 1) elem[snake[i][0]][snake[i][1]]->setStyleSheet("background-image: url(C:/Users/user/Desktop/Pxik/Zmeyka++/Figures/p1.png);");
-                else if (snake[i][2] == 2) elem[snake[i][0]][snake[i][1]]->setStyleSheet("background-image: url(C:/Users/user/Desktop/Pxik/Zmeyka++/Figures/p2.png);");
-                else if (snake[i][2] == 3) elem[snake[i][0]][snake[i][1]]->setStyleSheet("background-image: url(C:/Users/user/Desktop/Pxik/Zmeyka++/Figures/p3.png);");
+                if (snake[i][2] == 0) elem[snake[i][0]][snake[i][1]]->setStyleSheet("background-image: url(Figures/p0.png);");
+                else if (snake[i][2] == 1) elem[snake[i][0]][snake[i][1]]->setStyleSheet("background-image: url(Figures/p1.png);");
+                else if (snake[i][2] == 2) elem[snake[i][0]][snake[i][1]]->setStyleSheet("background-image: url(Figures/p2.png);");
+                else if (snake[i][2] == 3) elem[snake[i][0]][snake[i][1]]->setStyleSheet("background-image: url(Figures/p3.png);");
             }
         }
     }
